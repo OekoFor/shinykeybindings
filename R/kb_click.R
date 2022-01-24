@@ -1,4 +1,4 @@
-#' Keybinding for 'click' actions
+#' Keybindings for Shiny Widgets
 #'
 #' @description
 #'
@@ -23,7 +23,6 @@ kb_click <-
   function(inputId,
            key = NULL,
            modifier = NULL) {
-
     keypress_js_condition <- key_args_to_js_condition(key, modifier)
     js <-
       glue::glue(
@@ -35,5 +34,23 @@ kb_click <-
       .open = "<<",
       .close = ">>"
       )
-      tags$script(HTML(js))
+    tags$script(HTML(js))
   }
+
+#' @describeIn kb_click Focus on a widget
+kb_focus <- function(inputId,
+                     key = NULL,
+                     modifier = NULL) {
+  keypress_js_condition <- key_args_to_js_condition(key, modifier)
+  js <-
+    glue::glue(
+      "document.addEventListener('keydown', function (event) {
+        if (<<keypress_js_condition>>) {
+           $('#<<inputId>>').focus();
+        }
+      });",
+      .open = "<<",
+      .close = ">>"
+    )
+  tags$script(HTML(js))
+}
