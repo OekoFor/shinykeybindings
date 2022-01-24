@@ -1,50 +1,39 @@
 #' Keybinding for 'click' actions
 #'
-#'https://jsfiddle.net/4j54jqt2/4
+#' @description
 #'
 #' @param inputId inputID of the widget you want to click on
-#' @param key keycode
+#' @param key the keyvalue e.g. "a". See Details
+#' @param modifier Modifier Key. Allowed values are "ctrl", "alt" (option or ⌥ on OS X) or "shift". Only one modifier is allowed.
+#'
+#' @details
+#' Other common keys you might want to use besides the usal alphanumerical keys:
+#' - 'Enter' for '\code{'Enter'}, \code{'↵'} or \code{'Return'}
+#'
+#' https://jsfiddle.net/4j54jqt2/4
 #'
 #' @export
 #' @import shiny
 #' @import glue
 #'
 #' @examples
-#' shinykeybindings::kb_examples()
+#' \dontrun{shinykeybindings::kb_examples()}
 
 kb_click <-
   function(inputId,
-           key,
-           modifier = NULL,
-           plainJS = FALSE) {
-    if (!is.null(modifier)) {
-      modkey <- glue::glue("event.{modifier}Key && ")
-    } else {
-      modkey = ''
-    }
+           key = NULL,
+           modifier = NULL) {
 
-    keys_down_str <- glue::glue("{modkey}event.key === '{key}'")
-
+    keypress_js_condition <- key_args_to_js_condition(key, modifier)
     js <-
       glue::glue(
         "document.addEventListener('keydown', function (event) {
-        if (<<keys_down_str>>) {
+        if (<<keypress_js_condition>>) {
            $('#<<inputId>>').click();
         }
       });",
       .open = "<<",
       .close = ">>"
       )
-    if (plainJS) {
-      js
-    } else {
       tags$script(HTML(js))
-    }
   }
-
-#
-# code <- new_click("bla", "y", modifier = "ctrl", plainHTML = TRUE)
-# code
-# js::jshint(code)
-# cat(js::uglify_reformat(code, beautify = TRUE, indent_level = 2))
-#
