@@ -1,1 +1,1 @@
-THis is the example app to showcase keybindings
+This is the example app to showcase keybindings
