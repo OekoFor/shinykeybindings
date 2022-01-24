@@ -10,30 +10,20 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
+shinyUI(fluidPage(fluidRow(
+    column(
+        12,
+        h4("click a button"),
+        strong("Click button press key combination"),
+        p(strong("+ "), code("spacebar")),
+        p(strong("- "), code("ctrl + spacebar")),
 
-    h3("click keyboardbinding"),
-    p(
-        "Add",
-        strong(1),
-        "by clicking",
-        code("+"),
-        "or hit the",
-        code("spacebar")
-    ),
-    p(
-        "Substract",
-        strong(1),
-        "by clicking",
-        code("-"),
-        "or hit",
-        code("ctrl + spacebar")
-    ),
+        actionButton("add", NULL, icon = icon("plus")),
+        actionButton("substract", NULL, icon = icon("minus")),
+        numericInput("number", NULL, value = 10),
 
-    actionButton("add", NULL, icon = icon("plus")),
-    actionButton("substract", NULL, icon = icon("minus")),
-    numericInput("number", NULL, value = 10),
+        kb_click("add", key = " "),
+        kb_click("substract", key = " ", modifier = "ctrl")
+    )
 
-    kb_click("add", key = " "),
-    kb_click("substract", key = " ", modifier = "ctrl")
-))
+)))
