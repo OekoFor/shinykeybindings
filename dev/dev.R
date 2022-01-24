@@ -1,10 +1,20 @@
 library(devtools)
 
 
+# Add dependencies --------------------------------------------------------
+use_package("shiny")
+use_package("glue")
+
+
+
+# Add Functions -----------------------------------------------------------
+use_r("kb_click")
+use_r("key_args_to_js_condition")
+
+
 # Git and Github ----------------------------------------------------------
 # For the use of Github, follow this Blogpost to properly setup your credentialmanager if you haven't already
 # https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/#use-libsecret-credential-manager
-
 
 use_git()
 use_github(
@@ -13,8 +23,4 @@ use_github(
   protocol = git_protocol(),
 )
 
-
-
-# Add Functions -----------------------------------------------------------
-use_r("kb_click")
 
