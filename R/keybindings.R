@@ -5,20 +5,23 @@
 #' @param inputId inputID of the widget you want to click on
 #' @param key the keyvalue e.g. "a". See Details
 #' @param modifier Modifier Key. Allowed values are "ctrl", "alt" (option or ⌥ on OS X) or "shift". Only one modifier is allowed.
-#'
+#' @name keybindings
 #' @details
 #' Other common keys you might want to use besides the usal alphanumerical keys:
 #' - 'Enter' for '\code{'Enter'}, \code{'↵'} or \code{'Return'}
 #'
 #' https://jsfiddle.net/4j54jqt2/4
 #'
-#' @export
 #' @import shiny
 #' @import glue
 #'
 #' @examples
-#' \dontrun{shinykeybindings::kb_examples()}
+#' \dontrun{kb_examples()}
+NULL
+#> NULL
 
+#' @rdname keybindings
+#' @export
 kb_click <-
   function(inputId,
            key = NULL,
@@ -37,7 +40,8 @@ kb_click <-
     tags$script(HTML(js))
   }
 
-#' @describeIn kb_click Focus on a widget
+#' @rdname keybindings
+#' @export
 kb_focus <- function(inputId,
                      key = NULL,
                      modifier = NULL) {
