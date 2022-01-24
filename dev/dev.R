@@ -12,3 +12,9 @@ use_github(
   private = TRUE,
   protocol = git_protocol(),
 )
+
+
+
+# Add Functions -----------------------------------------------------------
+use_r("kb_click")
+
