@@ -25,7 +25,7 @@
 #' Almost all widgets can be focused using \code{kb_focus()}. Some widgets also allow to change values when focused using the arrow key. It is possible avoid \code{kb_radio()} by first focusing the widget and then using the arrow keys to toggle different choices.
 #'
 #'
-#' NOTE: Your keybindings may conflict with default shortcuts from your browser e.g. \code{ctrl + `+`} to magnify the page. \pkg{shinykeybindings} will prevent this and will only listen to your custom keybindings
+#' NOTE: Your keybindings may conflict with default shortcuts from your browser e.g. \code{ctrl + `+`} to magnify the page. \pkg{shinykeybindings} try prevent this and will only listen to your custom keybindings. It is possible though that some shortcuts lead to unforseen behaviour.
 #'
 #' https://jsfiddle.net/4j54jqt2/4
 #'
