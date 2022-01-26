@@ -10,8 +10,9 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 Set keybindings that allow you to navigate your Shiny App using keyboard
-shortcuts. Perform clicking actions, focus widgets, trigger reactivity
-or set values of radio buttons, all from your keyboard!
+shortcuts. Perform :point_left: clicking actions :eyeglasses: focus
+widgets :clock130: trigger reactivity or :heavy_check_mark: set values
+of radio buttons, all from your keyboard!
 
 ## Installation
 
