@@ -26,6 +26,7 @@ use_github(
   private = TRUE,
   protocol = git_protocol(),
 )
+usethis::use_github_action("render-rmarkdown")
 
 
 # Metadata stuff that needs to be updated  -----------------------------------------------------------------
