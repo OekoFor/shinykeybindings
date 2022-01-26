@@ -1,15 +1,15 @@
 Package: shinykeybindings
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
+Title: Navigate Shiny-Apps with Keyboard Shortcuts
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Felix",
+           family = "Günther",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "guenther@oekofor.de"),
+    person(given = "OekoFor",
+           role = c("cph", "fnd")))
+Description: Set keybindings that allow you to navigate your Shiny App using keyboard shortcuts. Perform clicking actions, focus widgets, trigger reactivity or set values of radio buttons, all from your keyboard!
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
