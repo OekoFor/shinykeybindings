@@ -4,30 +4,55 @@
 \alias{keybindings}
 \alias{kb_click}
 \alias{kb_focus}
+\alias{kb_event}
+\alias{kb_radio}
 \title{Keybindings for Shiny Widgets}
 \usage{
 kb_click(inputId, key = NULL, modifier = NULL)
 
 kb_focus(inputId, key = NULL, modifier = NULL)
+
+kb_event(inputId, key = NULL, modifier = NULL)
+
+kb_radio(inputId, key = NULL, modifier = NULL, value = NULL)
 }
 \arguments{
 \item{inputId}{inputID of the widget you want to click on}
 
-\item{key}{the keyvalue e.g. "a". See Details}
+\item{key}{the keyvalue e.g. "a". Mostly just whatever the keypress produces.\cr Some special keys are:
+\itemize{
+\item \strong{Enter/Return key}: type \code{'Enter'}
+\item \strong{Space Bar}: type a literal space \code{" "}
+\item see this page for more key values\cr \url{https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values}
+}}
 
 \item{modifier}{Modifier Key. Allowed values are "ctrl", "alt" (option or ⌥ on OS X) or "shift". Only one modifier is allowed.}
+
+\item{value}{the value (or choice) that will be selected}
 }
 \description{
+\subsection{\emph{\strong{Overview of keybinding functions:}}}{
 
+The keybinding functions set keyboard shortcuts to allow interactions with different shiny widgets without using the mouse pointer.\cr
+They mainly provide wrappers around different javascript actions and may sometimes be used interchangeably.\cr
+Common usage is:
+\itemize{
+\item \strong{kb_click():} Shortcut will perform a click action. Usually used with \code{\link[shiny]{actionButton}} or \code{\link[shiny]{checkboxInput}}
+\item \strong{kb_event():} Creates a Shiny Input that can be used to trigger a reactive e.g. \code{\link[shiny]{observeEvent}}. Does not need a UI-element.
+\item \strong{kb_focus():} Shortcut focuses a widget, usually a \code{\link[shiny]{textInput}} or \code{\link[shiny]{selectInput}}. See Details for more use cases.
+\item \strong{kb_radio():} Shortcut sets the value of \code{\link[shiny]{radioButtons}}. Needs one keybinding per value. See Details for an alternative approach.
+}
+}
 }
 \details{
-Other common keys you might want to use besides the usal alphanumerical keys:
-\itemize{
-\item 'Enter' for '\code{'Enter'}, \code{'↵'} or \code{'Return'}
-}
+Almost all widgets can be focused using \code{kb_focus()}. Some widgets also allow to change values when focused using the arrow key. It is possible avoid \code{kb_radio()} by first focusing the widget and then using the arrow keys to toggle different choices.
+
+NOTE: Your keybindings may conflict with default shortcuts from your browser e.g. \code{ctrl + `+`} to magnify the page. \pkg{shinykeybindings} try prevent this and will only listen to your custom keybindings. It is possible though that some shortcuts lead to unforseen behaviour.
 
 https://jsfiddle.net/4j54jqt2/4
 }
 \examples{
-\dontrun{kb_examples()}
+\dontrun{
+kb_examples()
+}
 }

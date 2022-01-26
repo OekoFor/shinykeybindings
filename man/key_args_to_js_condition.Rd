@@ -6,6 +6,16 @@
 \usage{
 key_args_to_js_condition(key, modifier)
 }
+\arguments{
+\item{key}{the keyvalue e.g. "a". Mostly just whatever the keypress produces.\cr Some special keys are:
+\itemize{
+\item \strong{Enter/Return key}: type \code{'Enter'}
+\item \strong{Space Bar}: type a literal space \code{" "}
+\item see this page for more key values\cr \url{https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values}
+}}
+
+\item{modifier}{Modifier Key. Allowed values are "ctrl", "alt" (option or ⌥ on OS X) or "shift". Only one modifier is allowed.}
+}
 \description{
 only for internal use
 }
