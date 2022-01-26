@@ -10,7 +10,7 @@ shinyUI(fluidPage(
         cellWidths = "25%",
         wellPanel(
           strong("Click button or press key combination"),
-          p(strong("Hello: "), code("Enter")),
+          p(strong("Hello: "), code("alt + Enter")),
           p(strong("Hi: "), code("ctrl + Enter")),
 
           actionButton("button_hi", "Hi!"),
@@ -18,7 +18,7 @@ shinyUI(fluidPage(
           textOutput("greeting"),
 
           # keybindings
-          kb_click("button_hi", key = "Enter"),
+          kb_click("button_hi", key = "Enter", modifier = "alt"),
           kb_click("button_hello", key = "Enter", modifier = "ctrl")
         ),
         wellPanel(
@@ -29,8 +29,8 @@ shinyUI(fluidPage(
           verbatimTextOutput("checkboxvalue"),
 
           # keybindings
-          kb_click("checkbox", "m", "ctrl")
-        )
+          kb_click("checkbox", "m", "ctrl"),
+         )
       )
     )
   ),
