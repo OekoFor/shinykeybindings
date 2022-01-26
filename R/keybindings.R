@@ -6,7 +6,7 @@
 #' They mainly provide wrappers around different javascript actions and may sometimes be used interchangeably.\cr
 #' Common usage is:
 #' \itemize{
-#'   \item \strong{kb_click():} Shortcut will perform a click action. Usually used with \code{\link[shiny]{actionButton}} or \code{\link[shiny]{checkbox}}
+#'   \item \strong{kb_click():} Shortcut will perform a click action. Usually used with \code{\link[shiny]{actionButton}} or \code{\link[shiny]{checkboxInput}}
 #'   \item \strong{kb_event():} Creates a Shiny Input that can be used to trigger a reactive e.g. \code{\link[shiny]{observeEvent}}. Does not need a UI-element.
 #'   \item \strong{kb_focus():} Shortcut focuses a widget, usually a \code{\link[shiny]{textInput}} or \code{\link[shiny]{selectInput}}. See Details for more use cases.
 #'   \item \strong{kb_radio():} Shortcut sets the value of \code{\link[shiny]{radioButtons}}. Needs one keybinding per value. See Details for an alternative approach.
