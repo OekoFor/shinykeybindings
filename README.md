@@ -10,9 +10,12 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 Set keybindings that allow you to navigate your Shiny App using keyboard
-shortcuts.<br/> This package lets you <br/> :point_left: perform
-clicking actions <br/> :eyeglasses: focus widgets <br/> :clock130:
-trigger reactivity <br/> :heavy_check_mark: set values of radio buttons
+shortcuts.<br/>
+This package lets you <br/>
+:point_left: perform clicking actions <br/>
+:eyeglasses: focus widgets <br/>
+:clock130: trigger reactivity <br/>
+:heavy_check_mark: set values of radio buttons
 
 ## Installation
 
@@ -59,3 +62,4 @@ if (interactive()) {
 ```
 
 For a complete example Shiny App run `kb_examples()`
+
