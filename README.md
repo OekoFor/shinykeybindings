@@ -60,4 +60,6 @@ if (interactive()) {
   shinyApp(ui, server)
 }
 ```
-For a complete example Shiny App run `kb_examples()` 
+
+For a complete example Shiny App run `kb_examples()`
+
